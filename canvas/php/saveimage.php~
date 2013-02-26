@@ -1,0 +1,8 @@
+<?php
+    $img = $_REQUEST['img'];
+    $name = $_REQUEST['name'];
+    $imge = explode('base64,', $img);
+    $dir = './drawing_saves/';
+    $imgd = base64_decode($imge[1]);
+    file_put_contents("{$dir}{$name}", $imgd);
+?>
